@@ -1,10 +1,31 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <router-view/>
+    <Tabbar style=" margin-top: 80px;"  v-if="this.$store.state.isTabbar"></Tabbar>
+  </div>
+ 
+  
+ 
 </template>
+
+<script>
+import Tabbar from '@/components/Tabbar.vue';
+export default {
+  data() {
+      return {
+        isTabbar: true
+      }
+    },
+  components: {
+    Tabbar
+  },
+  watch() {
+  
+      // this.isTabbar = this.$store.state.isTabbar
+    },
+}
+
+</script>
 
 <style>
 #app {
